@@ -1,0 +1,17 @@
+{
+  "name": "quik-ui",
+  "private": false,
+  "version": "0.0.1",
+  "description": "React Native UI Components Library",
+  "scripts": {},
+  "author": "Michał Fedyna <michal@fedyna.pl>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quik-ui/quik-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quik-ui/quik-ui/issues"
+  },
+  "homepage": "https://github.com/quik-ui/quik-ui#readme"
+}
