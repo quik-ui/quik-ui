@@ -1,0 +1,62 @@
+{
+  "name": "quik-ui",
+  "private": false,
+  "version": "0.0.1",
+  "description": "React Native UI Components Library",
+  "keywords": [
+    "react-native", "ui", "ui-kit", "components"
+  ],
+  "main": "dist/index.js",
+  "react-native": "lib/index.tsx",
+  "scripts": {
+    "setup": "npm install;cd ios;bundle install;bundle exec pod install",
+    "clean": "watchman watch-del-all;rm -rf yarn.lock package-lock.json node_modules android/app/build ios/Pods ios/Podfile.lock ~/Library/Developer/Xcode/DerivedData",
+    "start": "react-native start --reset-cache",
+    "ios": "react-native run-ios --no-packager --list-devices",
+    "android": "react-native run-android --no-packager --list-devices",
+    "lint": "eslint .",
+    "test": "jest",
+    "build": "tsc --project tsconfig.dist.json",
+    "api:extract": "api-extractor run --local --verbose",
+    "api:document": "api-documenter markdown --input-folder api/temp --output-folder api/docs",
+    "release": "npm run build; npm run api:extract; npm run api:document"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "author": "Michał Fedyna <michal@fedyna.pl>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quik-ui/quik-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quik-ui/quik-ui/issues"
+  },
+  "homepage": "https://github.com/quik-ui/quik-ui#readme",
+  "devDependencies": {
+    "react": "18.2.0",
+    "react-native": "0.73.4",
+    "@microsoft/api-documenter": "^7.23.23",
+    "@microsoft/api-extractor": "^7.40.1",
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native/babel-preset": "0.73.21",
+    "@react-native/eslint-config": "0.73.2",
+    "@react-native/metro-config": "0.73.5",
+    "@react-native/typescript-config": "0.73.1",
+    "@types/react": "^18.2.6",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^29.6.3",
+    "eslint": "^8.19.0",
+    "jest": "^29.6.3",
+    "prettier": "2.8.8",
+    "react-test-renderer": "18.2.0",
+    "typescript": "5.0.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
