@@ -1,0 +1,9 @@
+{
+  "name": "quik-ui-workspace",
+  "version": "0.0.1",
+  "description": "QuikUI library workspace",
+  "scripts": {},
+  "author": "Michał Fedyna <michal@fedyna.pl>",
+  "repository": "https://github.com/quik-ui/quik-ui",
+  "license": "MIT"
+}
