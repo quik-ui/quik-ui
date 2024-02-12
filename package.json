@@ -5,6 +5,8 @@
   "description": "QuikUI library workspace",
   "workspaces": [
     "./library",
+    "./cli",
+    "./templates",
     "./development",
     "./website"
   ],
