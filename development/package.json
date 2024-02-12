@@ -4,6 +4,8 @@
   "description": "Quik UI Development Environment",
   "private": true,
   "scripts": {
+    "setup": "npm install; cd ios; bundle install; bundle exec pod install; cd ..",
+    "clean": "watchman watch-del-all;rm -rf yarn.lock package-lock.json node_modules android/app/build ios/Pods ios/Podfile.lock ~/Library/Developer/Xcode/DerivedData",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -12,7 +14,10 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.73.4"
+    "react-native": "0.73.4",
+    "quik-ui": "../packages/library",
+    "quik-ui-templates": "../packages/templates",
+    "quik-ui-cli": "../packages/cli"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -4,9 +4,10 @@
   "version": "0.0.1",
   "description": "QuikUI library workspace",
   "workspaces": [
-    "./library",
-    "./cli",
-    "./templates",
+    "./packages/library",
+    "./packages/developer",
+    "./packages/cli",
+    "./packages/templates",
     "./development",
     "./website"
   ],
