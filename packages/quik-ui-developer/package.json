@@ -1,8 +1,8 @@
 {
-  "name": "quik-ui",
+  "name": "quik-ui-developer",
   "private": false,
   "version": "0.0.1",
-  "description": "React Native UI Components Library",
+  "description": "QuikUI Library Developer Components",
   "main": "lib/index.js",
   "peerDependencies": {
     "react": "*",

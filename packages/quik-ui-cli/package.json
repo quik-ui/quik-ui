@@ -1,13 +1,9 @@
 {
-  "name": "quik-ui",
+  "name": "quik-ui-cli",
   "private": false,
   "version": "0.0.1",
-  "description": "React Native UI Components Library",
-  "main": "lib/index.js",
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
+  "description": "QuikUI library CLI Tool",
+  "bin": "lib/index.js",
   "scripts": {
     "build": "tsc && npm run api:extract && npm run api:document",
     "watch": "tsc --watch",
