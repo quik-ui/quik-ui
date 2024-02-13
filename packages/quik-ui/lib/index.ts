@@ -7,8 +7,4 @@
  *@public
  *Hello is a simple function that logs "Hello" to the console
  */
-function Hello() {
-  console.log('Hello');
-}
-
-export {Hello};
+export {ThemeProvider} from './themes/provider';
