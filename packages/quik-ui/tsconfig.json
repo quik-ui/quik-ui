@@ -2,7 +2,19 @@
   "extends": "../../configs/tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./lib/",
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "allowJs": false,
+    "declaration": true,
+    "declarationMap": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "module": "esnext",
+    "target": "esnext",
+    "jsx": "react-native"
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }

@@ -3,7 +3,7 @@ import { forwardRef, useContext, useEffect, useMemo, useState } from "react";
 import { Appearance, StyleSheet } from "react-native";
 import { ThemeContext } from "./context";
 import { defaultsDeep } from "lodash";
-import { Theme } from "../../types/theme";
+import { Theme } from "../types/theme";
 import { defaultTheme } from "./theme";
 
 function withTheme(WrappedElement: any) {

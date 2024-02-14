@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeContext } from "./context";
-import { ComponentWithChildren } from "../../types/component";
-import { Theme } from "../../types/theme";
+import { ComponentWithChildren } from "../types/component";
+import { Theme } from "../types/theme";
 
 interface ThemeProviderProps {
   theme: Theme;
