@@ -8,9 +8,8 @@
 
 import { Context } from 'react';
 import { FC } from 'react';
-import { ForwardRefExoticComponent } from 'react';
 import { PropsWithChildren } from 'react';
-import { RefAttributes } from 'react';
+import { default as React_2 } from 'react';
 import { StyleSheet as StyleSheet_2 } from 'react-native';
 
 // @public (undocumented)
@@ -28,6 +27,8 @@ export const Container: Component<ContainerProps>;
 
 // @public (undocumented)
 export interface ContainerProps {
+    // (undocumented)
+    testID?: string;
 }
 
 // @public (undocumented)
@@ -80,7 +81,7 @@ export function useStyles<T extends StyleSheet_2.NamedStyles<T>>(styles: T | Sty
 export function useTheme(): Theme;
 
 // @public (undocumented)
-export function withTheme(WrappedElement: any): ForwardRefExoticComponent<RefAttributes<unknown>>;
+export function withTheme(WrappedElement: any): React_2.ForwardRefExoticComponent<React_2.RefAttributes<unknown>>;
 
 // (No @packageDocumentation comment for this package)
 

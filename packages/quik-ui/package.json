@@ -15,7 +15,9 @@
     "watch": "tsc --watch",
     "api:extract": "api-extractor run --local --verbose",
     "api:document": "api-documenter markdown --input-folder api/temp --output-folder api/docs",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "tslint": "tsc --noEmit"
   },
   "author": "Michał Fedyna <michal@fedyna.pl>",
   "license": "MIT",
