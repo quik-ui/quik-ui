@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./lib/"
+    "outDir": "./lib/",
+    "typeRoots": ["./node_modules/@types"],
   },
   "extends": "../../configs/tsconfig.base.json"
 }

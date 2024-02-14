@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "description": "QuikUI library workspace",
   "scripts": {
-    "prepare": "husky",
-    "postinstall": "pnpm run -r watch"
+    "prepare": "husky"
   },
   "author": "Michał Fedyna <michal@fedyna.pl>",
   "license": "MIT",

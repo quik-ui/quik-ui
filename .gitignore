@@ -1,6 +1,8 @@
 */**/.DS_Store
 .idea
+.nx
 node_modules
-*/**/dist
-*/**/bin
-*/**/temp
+packages/*/lib
+packages/*/types
+packages/*/api/docs
+packages/*/api/temp

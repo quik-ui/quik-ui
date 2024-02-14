@@ -4,8 +4,83 @@
 
 ```ts
 
+/// <reference types="react" />
+
+import { Context } from 'react';
+import { FC } from 'react';
+import { ForwardRefExoticComponent } from 'react';
+import { PropsWithChildren } from 'react';
+import { RefAttributes } from 'react';
+import { StyleSheet as StyleSheet_2 } from 'react-native';
+
 // @public (undocumented)
-export function Hello(): void;
+export interface Colors {
+}
+
+// @public (undocumented)
+export type Component<P = {}> = FC<P>;
+
+// @public (undocumented)
+export type ComponentWithChildren<P = {}> = FC<PropsWithChildren<P>>;
+
+// @public (undocumented)
+export const Container: Component<ContainerProps>;
+
+// @public (undocumented)
+export interface ContainerProps {
+}
+
+// @public (undocumented)
+export const defaultTheme: Theme;
+
+// @public (undocumented)
+export interface Fonts {
+}
+
+// @public (undocumented)
+export function setTheme(mode: Theme["mode"]): void;
+
+// @public (undocumented)
+export interface Spacing {
+}
+
+// @public (undocumented)
+export interface Theme {
+    // (undocumented)
+    colors: Colors;
+    // (undocumented)
+    fonts: Fonts;
+    // (undocumented)
+    mode: "light" | "dark";
+    // (undocumented)
+    spacing: Spacing;
+}
+
+// @public (undocumented)
+export const ThemeContext: Context<Theme>;
+
+// @public (undocumented)
+export const ThemeProvider: ComponentWithChildren<ThemeProviderProps>;
+
+// @public (undocumented)
+export interface ThemeProviderProps {
+    // (undocumented)
+    theme: Theme;
+}
+
+// @public (undocumented)
+export function useCreateTheme(theme: Partial<Theme>): {
+    theme: Theme;
+};
+
+// @public (undocumented)
+export function useStyles<T extends StyleSheet_2.NamedStyles<T>>(styles: T | StyleSheet_2.NamedStyles<T> | ((theme: Theme) => T) | ((theme: Theme) => StyleSheet_2.NamedStyles<T>)): StyleSheet_2.NamedStyles<T>;
+
+// @public (undocumented)
+export function useTheme(): Theme;
+
+// @public (undocumented)
+export function withTheme(WrappedElement: any): ForwardRefExoticComponent<RefAttributes<unknown>>;
 
 // (No @packageDocumentation comment for this package)
 

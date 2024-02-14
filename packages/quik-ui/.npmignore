@@ -1,0 +1,9 @@
+.nx
+api
+tests
+lib/**/*.d.ts.map
+lib/**/*.js.map
+api-extractor.json
+jest.config.js
+jest.setup.js
+tsconfig.json

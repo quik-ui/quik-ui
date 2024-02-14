@@ -5,7 +5,7 @@
   "scripts": {
     "setup": "cd ios; bundle install; bundle exec pod install; cd ..",
     "clean": "watchman watch-del-all;rm -rf android/app/build ios/Pods ios/Podfile.lock ~/Library/Developer/Xcode/DerivedData",
-    "start": "react-native start --reset-cache",
+    "start": "watchman watch-del-all;react-native start --reset-cache",
     "ios": "react-native run-ios --no-packager --list-devices",
     "android": "react-native run-android --no-packager --list-devices"
   },
