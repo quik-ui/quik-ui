@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 type FlexTransforms = {
   flex: "flex";
   grow: "flexGrow";
@@ -67,9 +69,23 @@ type SizeModifiers = {};
 // <Container styles="flex mx-lg p-xs" />
 
 type Transform = {
-  g: "gap";
   p: "padding";
+  pt: "paddingTop";
+  pr: "paddingRight";
+  pb: "paddingBottom";
+  pl: "paddingLeft";
+  px: "paddingHorizontal";
+  py: "paddingVertical";
   m: "margin";
+  mt: "marginTop";
+  mr: "marginRight";
+  mb: "marginBottom";
+  ml: "marginLeft";
+  mx: "marginHorizontal";
+  my: "marginVertical";
+  g: "gap";
+  gx: "rowGap";
+  gy: "columnGap";
 };
 
 type Values = {
@@ -80,19 +96,32 @@ type Values = {
 
 type KeyofTransform = keyof Transform;
 
+type PropertyOfTransform = Transform[KeyofTransform];
+
 type KeyofValues = keyof Values;
+
+type PropertyOfValues = Values[KeyofValues];
 
 type Modifier = `${KeyofTransform}-${KeyofValues}`;
 
-type ModifierList =
-  | Modifier
-  | `${Modifier} ${Modifier}`
-  | `${Modifier} ${Modifier} ${Modifier}`;
-
 const TRANSFORMS: Transform = {
-  g: "gap",
   p: "padding",
+  pt: "paddingTop",
+  pr: "paddingRight",
+  pb: "paddingBottom",
+  pl: "paddingLeft",
+  px: "paddingHorizontal",
+  py: "paddingVertical",
   m: "margin",
+  mt: "marginTop",
+  mr: "marginRight",
+  mb: "marginBottom",
+  ml: "marginLeft",
+  mx: "marginHorizontal",
+  my: "marginVertical",
+  g: "gap",
+  gx: "rowGap",
+  gy: "columnGap",
 };
 
 const VALUES: Values = {
@@ -101,7 +130,19 @@ const VALUES: Values = {
   lg: 16,
 };
 
-function transform(value: ModifierList): any {
+type Many<
+  T extends string,
+  Candidates extends string,
+  F extends string = T,
+> = T extends "" | " "
+  ? F | (F extends `${string} ` ? `${F}${Candidates}` : never)
+  : T extends ` ${infer Tail}`
+    ? Many<Tail, Candidates, F>
+    : T extends `${Candidates}${infer Tail}`
+      ? Many<Tail, Candidates, F>
+      : `Modifiers`;
+
+function transform<T extends string>(value: Many<T, Modifier>): any {
   let obj: any = {};
   const arr = value.split(" ");
   arr.forEach((i) => {
@@ -112,4 +153,17 @@ function transform(value: ModifierList): any {
   return obj;
 }
 
-console.log(transform("g-sm p-lg"));
+export type ExampleProps<T extends string> = {
+  styles: Many<T, Modifier>;
+};
+
+function Example<T extends string>({ styles }: { styles: Many<T, Modifier> }) {
+  return <></>;
+}
+
+const Use = () => {
+  return <Example styles="p-lg"></Example>;
+};
+
+console.log(transform("p-lg"));
+console.log(transform("g-sm h-lg"));
