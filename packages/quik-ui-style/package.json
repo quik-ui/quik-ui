@@ -1,8 +1,8 @@
 {
-  "name": "quik-ui-developer",
+  "name": "quik-ui-style",
   "private": false,
   "version": "0.0.1",
-  "description": "QuikUI Library Developer Components",
+  "description": "React Native Styling Library",
   "main": "lib/index.js",
   "peerDependencies": {
     "react": "*",
@@ -32,23 +32,8 @@
   ],
   "packageManager": "pnpm@8.15.2+sha256.90bb5d6382cb2cb8b8d4959a076b3953d84d1d94121717097bcd41c71344fa14",
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@babel/preset-env": "^7.20.0",
-    "@babel/runtime": "^7.20.0",
-    "@jest/globals": "^29.7.0",
     "@microsoft/api-documenter": "^7.23.23",
     "@microsoft/api-extractor": "^7.40.1",
-    "@react-native/babel-preset": "0.73.21",
-    "@testing-library/react-native": "^12.4.3",
-    "@types/jest": "^29.5.12",
-    "@types/lodash": "^4.14.202",
-    "@types/react": "latest",
-    "@types/react-test-renderer": "^18.0.7",
-    "babel-jest": "^29.6.3",
-    "jest": "^29.6.3",
-    "react": "18.2.0",
-    "react-native": "0.73.4",
-    "react-test-renderer": "18.2.0",
     "typescript": "5.3.3"
   }
 }

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { ViewStyle } from "react-native";
 
 type FlexTransforms = {
   flex: "flex";
@@ -65,8 +65,10 @@ type SizeModifiers = {};
 
 // As a String or as a Prop
 // <Container flex mx-lg py-sm />
-// <Container flex mx="lg" py="sm" />
-// <Container styles="flex mx-lg p-xs" />
+// <Container flex mx={16} py={8} />
+// const styles = createStyles('flex', 'mx-lg', {'p-xs': true}, {'py-sm': false})
+// <Container styles={styles} />
+// <Container styles={['flex', 'mx-lg', 'px-lg': true]} />
 
 type Transform = {
   p: "padding";
@@ -130,40 +132,41 @@ const VALUES: Values = {
   lg: 16,
 };
 
-type Many<
-  T extends string,
-  Candidates extends string,
-  F extends string = T,
-> = T extends "" | " "
-  ? F | (F extends `${string} ` ? `${F}${Candidates}` : never)
-  : T extends ` ${infer Tail}`
-    ? Many<Tail, Candidates, F>
-    : T extends `${Candidates}${infer Tail}`
-      ? Many<Tail, Candidates, F>
-      : `Modifiers`;
+type ModifierObject = { [K in Modifier]?: boolean };
 
-function transform<T extends string>(value: Many<T, Modifier>): any {
-  let obj: any = {};
-  const arr = value.split(" ");
-  arr.forEach((i) => {
-    const [property, value] = i.split("-") as [KeyofTransform, KeyofValues];
-    obj[TRANSFORMS[property]] = VALUES[value];
+type ModifierArray = (Modifier | ModifierObject)[];
+
+type ModifierArgs = (Modifier | ModifierObject | ModifierArray)[];
+
+type ModifierProps = ModifierObject;
+
+function createStyles(...args: ModifierArgs): ModifierArgs {
+  return args;
+}
+
+function transformStyles(...args: ModifierArgs): ViewStyle {
+  return args.map((arg) => {
+    const [transform, value] = arg.split("-") as [KeyofTransform, KeyofValues];
+    const property = TRANSFORMS[transform] as PropertyOfTransform;
+    const size = VALUES[value] as PropertyOfValues;
+    return { [property]: size };
   });
-
-  return obj;
 }
 
-export type ExampleProps<T extends string> = {
-  styles: Many<T, Modifier>;
-};
+function useTransformStyles() {}
 
-function Example<T extends string>({ styles }: { styles: Many<T, Modifier> }) {
-  return <></>;
+createStyles("p-sm", "m-md") = {padding: 8, margin: 16}
+
+const styles = createStyles("p-sm", "m-md", "g-lg", ["p-lg", { "m-sm": true }]);
+const styles = createStyles(
+  { "m-lg": true, "gy-lg": false },
+  { "gx-sm": true },
+  "m-md",
+  "g-lg",
+);
+
+type ExampleProps = {
+
 }
 
-const Use = () => {
-  return <Example styles="p-lg"></Example>;
-};
-
-console.log(transform("p-lg"));
-console.log(transform("g-sm h-lg"));
+const Example =
